@@ -4,9 +4,15 @@
     box-sizing: border-box;
     background-color: black;
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
 
-
-#canvas{
+/*#canvas{
     border: 2px solid white;
     position: absolute;
     top:50%;
@@ -14,9 +20,9 @@
     transform: translate(-50%, -50%);
     width: 500px;
     height: 706px;
-}
-/*#canvas{
-    border: 1px solid white;
-    width: 36vw;
-    height: 70vh;
 }*/
+#canvas{
+    border: 2px solid white;
+    width: 500px;
+    height: 706px;
+}

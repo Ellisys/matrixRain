@@ -63,8 +63,6 @@ pImage.addEventListener("load", function(){
             this.position1 = Math.floor(this.y)
             this.position2 = Math.floor(this.x)
         }
-
-        /*Quando a particula atingir a borda da tela ela voltara ao ponto inicial que é o topo.*/
         update(){
             this.position1 = Math.floor(this.y)
             this.position2 = Math.floor(this.x)
@@ -72,6 +70,7 @@ pImage.addEventListener("load", function(){
             let movement = (2.5 - this.speed) + this.velocity;
 
             this.y += movement;
+            /*Quando a particula atingir a borda da tela ela voltara ao ponto inicial que é o topo.*/
             if(this.y >= canvas.height){
                 this.y = 0;
                 this.x = Math.random() * canvas.width;
