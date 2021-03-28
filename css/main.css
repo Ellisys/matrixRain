@@ -42,3 +42,10 @@ body{
     width: 500px;
     height: 706px;
 }
+
+@media (max-width:425px){
+    #canvas{
+        width: 100vw;
+        height: 100vw;
+    }
+}
