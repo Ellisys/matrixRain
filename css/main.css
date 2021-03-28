@@ -7,10 +7,36 @@
 body{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
     width: 100vw;
     height: 100vh;
 }
+.btnMod{
+    display: flex;
+    flex-wrap: wrap;
+}
+.btnIn{
+    color: rgb(192, 192, 192);
+    border: none;
+    background-color: rgb(41, 41, 41);
+    width: 100px;
+    height: 40px;
+    font-size: 1em;
+    border-radius: 9px;
+    outline: none;
+}
+.btnIn:hover{
+    color: white;
+    background-color: rgb(71, 71, 71);
+    transition: 0.8s;
+    font-size: 1.1em;
+    border: 1px solid rgb(91, 91, 91);
+}
+.btnDiv{
+    padding-left: 2%;
+}
+
 #canvas{
     border: 2px solid white;
     width: 500px;

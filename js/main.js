@@ -1,3 +1,14 @@
+const btnBnW = document.getElementById("btnBnW");
+const btnColor = document.getElementById("btnColor");
+var colorState = 0;
+
+btnBnW.addEventListener("click",()=>{
+    colorState = 0;
+})
+btnColor.addEventListener("click",()=>{
+    colorState = 1;
+})
+
 /*Podem ocorrer alguns erros caso a imagem nao carregue e, para evitar utilizo o evento "load".*/
 pImage.addEventListener("load", function(){
     const canvas = document.getElementById("canvas");
@@ -10,8 +21,6 @@ pImage.addEventListener("load", function(){
     /*Aqui cria a imagem*/
     ctx.drawImage(pImage, 0, 0, canvas.width, canvas.height)
 
-
-     
     /*(Aqui analisa a imagem)getImageData tras os dados da imagem, mas o que quero sao os valores RGB para que posso fazer com que,
     onde esta mais claro a particula passe devagar e onde esta mais escuro mais rapido.*/
     const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -33,6 +42,7 @@ pImage.addEventListener("load", function(){
             const brightness = calcPixelBrightness(red,green,blue);
             const cell = [
                 cellBrightness = brightness,
+                color = "rgb("+ `${red},${green},${blue}` +")",
             ];
             row.push(cell)
         }
@@ -73,9 +83,15 @@ pImage.addEventListener("load", function(){
                 this.x = Math.random() * canvas.width;
             }
         }
+        
         draw(){
             ctx.beginPath();
-            ctx.fillStyle = "white";
+            if(colorState == 0){
+                ctx.fillStyle = "white";
+            }
+            if(colorState == 1){
+                ctx.fillStyle = ctx.fillStyle = mappedImage[this.position1][this.position2][1];
+            }
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
         }
@@ -102,7 +118,3 @@ pImage.addEventListener("load", function(){
         animate();
 
 });
-
-
-
-
